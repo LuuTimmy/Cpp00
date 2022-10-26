@@ -8,6 +8,8 @@
 #include <ctype.h>
 #include <sstream>
 
+#include "contact.hpp"
+
 class Phonebook
 {
     public:

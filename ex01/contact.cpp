@@ -6,7 +6,7 @@ std::string Contact::verifIsEmpty(std::string name) {
 	while (1) {
 		std::cout << name;
 		std::getline(std::cin, line);
-		if (line != "") //pt faire un trim
+		if (line != "")
 			break ;
 		else
 		    std::cout << "empty information" << std::endl;

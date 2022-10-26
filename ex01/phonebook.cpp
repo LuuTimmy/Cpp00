@@ -44,7 +44,7 @@ void Phonebook::display()
 	while (1) {
 		std::cout << "wait index" << std::endl;
 		std::stringstream ss;
-		std::getline(std::cin, str); //verif number //pt faire un trim
+		std::getline(std::cin, str);
 		ss << str;
 		if (ss >> i && !ss.rdbuf()->in_avail() && i > 0 && i <= 8) {
         	break ;
