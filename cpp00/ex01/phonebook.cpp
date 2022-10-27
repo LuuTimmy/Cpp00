@@ -35,9 +35,9 @@ void Phonebook::display()
 	while(i < 8)
 	{
 		std::cout << i + 1 << "         |";
-		print_info(contactnb[i].first_name);
-		print_info(contactnb[i].last_name);
-		print_info(contactnb[i].nickname);
+		print_info(contactnb[i].getFirstName());
+		print_info(contactnb[i].getLastName());
+		print_info(contactnb[i].getFirstName());
 		std::cout << "\n";
 		i++;
 	}
@@ -52,9 +52,30 @@ void Phonebook::display()
 		else {
 			std::cout << "wrong index" << std::endl;
 		}
-		if (contactnb[i - 1].first_name == "")
+		if (contactnb[i - 1].getFirstName() == "")
 			std::cout << "no information" << std::endl;
 		else
 			contactnb[i - 1].printAll();
+	}
+}
+
+int main()
+{
+	Phonebook phonebook;
+	std::string cmd;
+
+	while (1)
+	{
+		std::cout << "wait command" << std::endl;
+		std::getline(std::cin, cmd);
+		if (cmd == "ADD")
+			phonebook.add_contact();
+		else if (cmd == "SEARCH") {
+			phonebook.display();
+		}
+		else if (cmd == "EXIT")
+			exit(0);
+		else
+			std::cout << "invalid command" << std::endl;
 	}
 }
