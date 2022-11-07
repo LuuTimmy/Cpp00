@@ -2,9 +2,6 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-//verif le null
-
-
 int main()
 {
 {
