@@ -7,7 +7,8 @@ class Fixed
 {
     public:
         Fixed(void);
-        Fixed(int const arg);
+        Fixed(const int nb);
+        Fixed(const float nb);
         ~Fixed(void);
 
 

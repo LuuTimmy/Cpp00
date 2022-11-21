@@ -5,6 +5,16 @@ Fixed::Fixed() {
     this->value = 0;
 }
 
+Fixed::Fixed(const int nb) {
+    std::cout << "Int constructor called" << std::endl;
+    setRawBits(nb << this->const_static_value);
+}
+
+Fixed::Fixed(const float nb) {
+    std::cout << "Float constructor called" << std::endl;
+    this->value = 0;
+}
+
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 }
