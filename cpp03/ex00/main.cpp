@@ -7,7 +7,7 @@ int main() { //constructeur vide ?
 
     koala.attack("girafe");
     claptrap1.attack("pamplemousse");
-    claptrap1.takeDamage(1592113);
+    claptrap1.takeDamage(8);
     claptrap1.beRepaired(50);
     claptrap1.beRepaired(50);
     claptrap1.beRepaired(50);

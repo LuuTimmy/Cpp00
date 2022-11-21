@@ -8,6 +8,7 @@ class Claptrap
     public:
         Claptrap();
         Claptrap(std::string str);
+        Claptrap(std::string str, int hp, int energy, int attackDamage);
         ~Claptrap();
 
         void    attack(const std::string & target);
