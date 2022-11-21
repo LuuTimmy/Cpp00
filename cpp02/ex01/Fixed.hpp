@@ -12,7 +12,8 @@ class Fixed
         ~Fixed(void);
 
 
-
+        float   toFloat(void) const;
+        int     toInt(void) const; 
         int     getRawBits(void) const;
         void    setRawBits(int const newValue);
         Fixed(Fixed const & src);
@@ -21,5 +22,7 @@ class Fixed
         int					value;
         const static int	const_static_value = 8;
 };
+
+std::ostream &  operator<<(std::ostream & o, Fixed const & rhs);
 
 #endif
