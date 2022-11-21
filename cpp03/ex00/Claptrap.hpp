@@ -14,6 +14,9 @@ class Claptrap
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
 
+        Claptrap(Claptrap const & src);
+        Claptrap &  operator=(Claptrap const & rhs);
+
     private:
         std::string _name;
         int _hit_points;

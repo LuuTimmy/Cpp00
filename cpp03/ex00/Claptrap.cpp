@@ -32,3 +32,16 @@ void    Claptrap::beRepaired(unsigned int amount) {
     else
         std::cout << "Claptrap " << this->_name << " don't have enought energy for repair" << std::endl;
 }
+
+Claptrap::Claptrap(Claptrap const & src) {
+    *this = src;
+    return ;
+}
+
+Claptrap & Claptrap::operator=(Claptrap const & rhs) {
+    this->_name = rhs._name;
+    this->_hit_points = rhs._hit_points;
+    this->_energy_points = rhs._energy_points;
+    this->_attack_damage = rhs._attack_damage;
+    return (*this);
+}

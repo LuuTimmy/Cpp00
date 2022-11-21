@@ -13,9 +13,10 @@ class Fixed
 
 
         float   toFloat(void) const;
-        int     toInt(void) const; 
+        int     toInt(void) const;
         int     getRawBits(void) const;
         void    setRawBits(int const newValue);
+        
         Fixed(Fixed const & src);
         Fixed &	operator=(Fixed const & rhs);
     private:
