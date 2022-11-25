@@ -1,23 +1,23 @@
-#include "Claptrap.hpp"
+#include "ClapTrap.hpp"
 
 int main() { //constructeur vide ?
-    Claptrap koala;
-    Claptrap claptrap1("bibou");
-    Claptrap claptrap2("pamplemousse");
+    ClapTrap koala;
+    ClapTrap ClapTrap1("bibou");
+    ClapTrap ClapTrap2("pamplemousse");
 
     koala.attack("girafe");
-    claptrap1.attack("pamplemousse");
-    claptrap1.takeDamage(8);
-    claptrap1.beRepaired(50);
-    claptrap1.beRepaired(50);
-    claptrap1.beRepaired(50);
-    claptrap1.beRepaired(50);
-    claptrap1.beRepaired(50);
-    claptrap1.beRepaired(50);
-    claptrap1.beRepaired(50);
-    claptrap1.beRepaired(50);
-    claptrap1.beRepaired(50);
-    claptrap1.beRepaired(50);
-    claptrap1.beRepaired(50);
-    claptrap1.attack("pamplemousse");
+    ClapTrap1.attack("pamplemousse");
+    ClapTrap1.takeDamage(8);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.beRepaired(50);
+    ClapTrap1.attack("pamplemousse");
 }

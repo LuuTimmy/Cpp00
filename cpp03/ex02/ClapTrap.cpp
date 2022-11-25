@@ -1,13 +1,17 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("[]"), _hit_points(10), _energy_points(10), _attack_damage(10) {
+ClapTrap::ClapTrap() : _name("[]"), _hit_points(10), _energy_points(10), _attack_damage(0) {
+    std::cout << "ClapTrap " << this->_name << " default constructor" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(10) {    
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) {
+    std::cout << "ClapTrap " << this->_name << " constructor" << std::endl;    
 }
 
 ClapTrap::ClapTrap(std::string str, int hp, int energy, int attackDamage) : 
     _name(str), _hit_points(hp), _energy_points(energy), _attack_damage(attackDamage) {
+        
+    std::cout << "ClapTrap " << this->_name << " constructor" << std::endl;    
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src) : 
@@ -21,6 +25,7 @@ ClapTrap::ClapTrap(ClapTrap const & src) :
 }
 
 ClapTrap::~ClapTrap() {
+    std::cout << "ClapTrap " << this->_name << " destructor" << std::endl;
 }
 
 void    ClapTrap::attack(const std::string & target) {
