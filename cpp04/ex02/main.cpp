@@ -4,16 +4,23 @@
 
 int main()
 {
-    int array = 10;
+//const Animal* meta = new Animal();
+const Animal* j = new Dog();
+const Animal* i = new Cat();
+std::cout << j->getType() << " " << std::endl;
+std::cout << i->getType() << " " << std::endl;
+i->makeSound(); //will output the cat sound!
+j->makeSound();
 
-    Animal *array_animals[array];
-    for(int i = 0; i < array; i++) {
-        if (i <= array / 2)
-            array_animals[i] = new Dog();
-        else
-            array_animals[i] = new Cat();
-    }
-    for(int i = 0; i < array; i++) {
-        delete array_animals[i];
-    }
+const WrongAnimal* w_meta = new WrongAnimal();
+const WrongAnimal* w_i = new WrongCat();
+std::cout << w_i->getType() << " " << std::endl;
+w_i->makeSound(); //will output the cat sound!
+w_meta->makeSound();
+
+delete(j);
+delete(i);
+delete(w_meta);
+delete(w_i);
+return 0;
 }
