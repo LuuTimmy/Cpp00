@@ -1,12 +1,11 @@
-NAME		=	ex03
+NAME		=	ex02
 
-SRCS		=	main.cpp \
-				ClapTrap.cpp \
-				ScavTrap.cpp \
+SRCS		=	Account.cpp \
+				test.cpp \
 
 OBJS		=	${SRCS:.cpp=.o}
 
-FLAGS		=	-Wall -Wextra -Werror -std=c+98
+FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 ${NAME}:	${OBJS}
 				g++ ${FLAGS} ${OBJS} -o ${NAME}
