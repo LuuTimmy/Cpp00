@@ -1,27 +1,24 @@
-NAME	= zombie
+NAME		=	ex01
 
-SOURCES =	main.cpp
-			Zombie.cpp
-			newZombie.cpp
-			randomChump.cpp
+SRCS		=	main.cpp \
+				Zombie.cpp \
+				zombieHorde.cpp \
 
-OBJECTS = ${SOURCES:.cpp=.o}
+OBJS		=	${SRCS:.cpp=.o}
 
-CFLAGS	= -Wall -Wextra -Werror
+FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-CC = g++ 
+${NAME}:	${OBJS}
+				g++ ${FLAGS} ${OBJS} -o ${NAME}
 
-all:		${NAME}
+all: 		${NAME}
 
-${NAME}:	${OBJECTS}
-			g++ ${OBJECTS} -o ${NAME} -std=c++98
+clean:		
+			rm -rf ${OBJS}
 
-clean:
-	rm -rf ${OBJECTS} 
+fclean:	clean
+			rm -rf ${OBJS} ${NAME}
 
-fclean: clean
-	rm -rf ${NAME}
+re:		fclean all
 
-re: fclean all
-
-.PHONY: all clean fclean re
+.PHONY:		clean fclean re

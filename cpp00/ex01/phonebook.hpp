@@ -1,10 +1,8 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <string.h>
+#include <algorithm>
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
 #include <ctype.h>
 #include <sstream>
 

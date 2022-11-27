@@ -7,7 +7,7 @@ Fixed::Fixed() {
 
 Fixed::Fixed(const int nb) {
     std::cout << "Int constructor called" << std::endl;
-    setRawBits(nb << this->const_static_value); //whut
+    setRawBits(nb << this->const_static_value);
 }
 
 Fixed::Fixed(const float nb) {
