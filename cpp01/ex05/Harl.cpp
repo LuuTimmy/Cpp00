@@ -8,7 +8,7 @@ void    Harl::complain(std::string level) {
     void    (Harl::*f[])() = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string msg[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-    for (int i = 0; i < sizeof(sizeof(msg) / sizeof(std::string)); i++) {
+    for (std::size_t i = 0; i < sizeof(msg) / sizeof(std::string); i++) {
         if (level == msg[i])
             (this->*f[i])();
     }

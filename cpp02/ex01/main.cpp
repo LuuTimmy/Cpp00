@@ -1,9 +1,6 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-
-std::cout << roundf(1234.4321f * (1 << 8)) << std::endl;
-
 Fixed a;
 Fixed const b( 10 );
 Fixed const c( 42.42f );

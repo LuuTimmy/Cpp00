@@ -6,11 +6,10 @@ Harl::~Harl() {}
 
 void    Harl::complain(std::string level) {
 
-    int nb;
-    void    (Harl::*f[])() = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    int     nb(1000);
     std::string msg[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-    for (int i = 0; i < sizeof(sizeof(msg) / sizeof(std::string)); i++) {
+    for (std::size_t i = 0; i < sizeof(msg) / sizeof(std::string); i++) {
         if (msg[i] == level) {
             nb = i;
             break ;

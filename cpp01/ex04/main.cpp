@@ -4,12 +4,13 @@
 
 std::string ft_replace(std::string str, std::string s1, std::string s2)
 {
-    int pos = 6;
-    int len = s2.size();
+    std::string::size_type pos = 0;
+    std::string::size_type len = s2.size();
 
-    while ((pos = str.find(s1)) != std::string::npos) {
-        str.erase(pos, s1.size() + 1);
+    while ((pos = str.find(s1, pos)) != std::string::npos) {
+        str.erase(pos, s1.size());
         str.insert(pos, s2);
+        pos += len;
     }
     return (str);
 }

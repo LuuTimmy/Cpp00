@@ -1,16 +1,18 @@
 NAME		=	ex00
 
-SRCS		=	newZombie.cpp \
+SRCS		=	main.cpp \
+				newZombie.cpp \
 				randomChump.cpp \
 				Zombie.cpp \
-				main.cpp \
 
 OBJS		=	${SRCS:.cpp=.o}
 
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+
+CXX			= c++
 
 ${NAME}:	${OBJS}
-				g++ ${FLAGS} ${OBJS} -o ${NAME}
+				${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 
 all: 		${NAME}
 

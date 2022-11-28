@@ -3,5 +3,5 @@
 int main() {
     Harl harl = Harl();
 
-    harl.complain("ERROR");
+    harl.complain("ERROnddR");
 }
