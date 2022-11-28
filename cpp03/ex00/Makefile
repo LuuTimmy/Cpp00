@@ -1,14 +1,16 @@
-NAME		=	ex03
+NAME		=	ex00
 
 SRCS		=	main.cpp \
 				ClapTrap.cpp \
 
 OBJS		=	${SRCS:.cpp=.o}
 
-FLAGS		=	-Wall -Wextra -Werror -std=c+98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+
+CXX			= c++
 
 ${NAME}:	${OBJS}
-				g++ ${FLAGS} ${OBJS} -o ${NAME}
+				${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 
 all: 		${NAME}
 
