@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <cstring>
 
-std::string replace(std::string str, std::string s1, std::string s2)
+std::string ft_replace(std::string str, std::string s1, std::string s2)
 {
     int pos = 6;
     int len = s2.size();
@@ -32,7 +33,7 @@ int main(int argc, char **argv)
     outfile.open(str);
     if (infile && outfile) {
         while (std::getline(infile, str)) {
-            str = replace(str, argv[2], argv[3]);
+            str = ft_replace(str, argv[2], argv[3]);
             outfile << str << std::endl;
         }
     }

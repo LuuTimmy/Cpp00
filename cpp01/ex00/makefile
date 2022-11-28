@@ -1,8 +1,9 @@
 NAME		=	ex00
 
 SRCS		=	newZombie.cpp \
-				ramdomChump.cpp \
+				randomChump.cpp \
 				Zombie.cpp \
+				main.cpp \
 
 OBJS		=	${SRCS:.cpp=.o}
 

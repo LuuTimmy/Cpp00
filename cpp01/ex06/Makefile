@@ -1,4 +1,4 @@
-NAME		=	ex06
+NAME		=	harlFilter
 
 SRCS		=	main.cpp \
 				Harl.cpp \
