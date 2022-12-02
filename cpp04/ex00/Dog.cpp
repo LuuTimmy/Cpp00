@@ -5,9 +5,7 @@ Dog::Dog() {
     std::cout << "Dog Default constructor" << std::endl;
 }
 
-Dog::Dog(Dog const & src) {
-    _type = "Dog";
-    *this = src;
+Dog::Dog(Dog const & src) : Animal(src) {
 }
 
 Dog::~Dog() {
@@ -19,7 +17,7 @@ std::string     Dog::getType() const {
 }
 
 void    Dog::makeSound() const {
-    std::cout << _type << " waafffff" << std::endl;
+    std::cout << getType() << " waafffff" << std::endl;
 }
 
 

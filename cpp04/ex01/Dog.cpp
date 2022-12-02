@@ -6,7 +6,7 @@ Dog::Dog() {
 }
 
 Dog::Dog(Dog const & src) {
-    _type = "Dog";
+    _type = src._type;
     *this = src;
 }
 

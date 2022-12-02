@@ -5,9 +5,8 @@ Cat::Cat() {
     std::cout << "Cat Default constructor" << std::endl;
 }
 
-Cat::Cat(Cat const & src) {
-    _type = "Cat";
-    *this = src;
+Cat::Cat(Cat const & src) : Animal(src) {
+
 }
 
 Cat::~Cat() {
@@ -19,7 +18,7 @@ std::string     Cat::getType() const{
 }
 
 void    Cat::makeSound() const {
-    std::cout << _type << " miaouu" << std::endl;
+    std::cout << getType() << " miaouu" << std::endl;
 }
 
 

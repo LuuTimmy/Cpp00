@@ -5,9 +5,7 @@ WrongCat::WrongCat() {
     std::cout << "WrongCat Default constructor" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const & src) {
-    _type = "WrongCat";
-    *this = src;
+WrongCat::WrongCat(WrongCat const & src) : WrongAnimal(src) {
 }
 
 WrongCat::~WrongCat() {
@@ -19,7 +17,7 @@ std::string     WrongCat::getType() const{
 }
 
 void    WrongCat::makeSound() const {
-    std::cout << _type << " Wrong miaouu" << std::endl;
+    std::cout << getType() << " Wrong miaouu" << std::endl;
 }
 
 

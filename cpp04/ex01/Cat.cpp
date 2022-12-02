@@ -7,7 +7,7 @@ Cat::Cat() {
 }
 
 Cat::Cat(Cat const & src) {
-    _type = "Cat";
+    _type = src._type;
     _brain = new Brain();
     *this = src;
 }

@@ -19,10 +19,6 @@ std::cout << w_i->getType() << " " << std::endl;
 w_i->makeSound(); //will output the cat sound!
 w_meta->makeSound();
 
-delete(meta);
-delete(j);
-delete(i);
-delete(w_meta);
-delete(w_i);
+
 return 0;
 }

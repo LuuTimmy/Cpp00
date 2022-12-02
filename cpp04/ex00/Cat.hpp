@@ -7,7 +7,7 @@ class Cat : virtual public Animal
 {
     public:
         Cat();
-        ~Cat();
+        virtual ~Cat();
 
         std::string     getType() const;
         void            makeSound() const;
