@@ -23,7 +23,15 @@ void    ShrubberyCreationForm::executeChild(Bureaucrat const & executor) const {
     file.open((_target + "_shrubbery").c_str());
     if (!file)
         throw ExecutionSign();
-    file << "TREE in ascii";  
+    file << "       _-_          " << std::endl;
+    file << "    /~~   ~~\\       " << std::endl;
+    file << " /~~         ~~\\    " << std::endl;
+    file << "{               }   " << std::endl;
+    file << " \\  _-     -_  /    " << std::endl;
+    file << "   ~  \\ //  ~      " << std::endl;
+    file << "_- -   | | _- _     " << std::endl;
+    file << "  _ -  | |   -_     " << std::endl;
+    file << "      // \\;        " << std::endl;
 }
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs) {
