@@ -24,7 +24,7 @@ void    Convert::transformAll() {
 void    Convert::toChar() {
     std::cout << "char : ";
     try {
-        char c = static_cast<char>(std::stoi(_str));
+        char c = static_cast<int>(std::stoi(_str));
         if (c < 32 || c > 127)
             std::cout << "No displayble" << std::endl;
         else

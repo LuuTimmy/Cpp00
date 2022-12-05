@@ -1,19 +1,15 @@
 NAME		=	ex01
 
-SRCS		=	main.cpp \
-				Animal.cpp \
-				Dog.cpp \
-				Cat.cpp \
-				WrongAnimal.cpp \
-				WrongCat.cpp \
-				Brain.cpp \
+SRCS		=	${wildcard *.cpp}
 
 OBJS		=	${SRCS:.cpp=.o}
 
-FLAGS		=	-Wall -Wextra -Werror -std=c+98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
+
+CXX			= c++
 
 ${NAME}:	${OBJS}
-				g++ ${FLAGS} ${OBJS} -o ${NAME}
+				${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME} -fsanitize=address
 
 all: 		${NAME}
 

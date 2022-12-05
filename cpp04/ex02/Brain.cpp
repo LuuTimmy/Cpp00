@@ -13,7 +13,7 @@ Brain::~Brain() {
 }
 
 Brain & Brain::operator=(Brain const & src) {
-    for(int i = 0; i < sizeof(ideas) / sizeof(ideas[0]); i++) {
+    for(size_t i = 0; i < sizeof(ideas) / sizeof(ideas[0]); i++) {
         ideas[i] = src.ideas[i];
     }
     return(*this);

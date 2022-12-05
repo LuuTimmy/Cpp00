@@ -8,7 +8,7 @@ Data* deserialize(uintptr_t raw) {
     return (reinterpret_cast<Data *>(raw));
 }
 
-int main(int argc, char **argv) {
+int main() {
     Data data("plouf", 35);
 
     uintptr_t test = serialize(&data);

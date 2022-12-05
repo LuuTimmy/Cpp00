@@ -6,14 +6,11 @@ Cat::Cat() {
     std::cout << "Cat Default constructor" << std::endl;
 }
 
-Cat::Cat(Cat const & src) {
-    _type = "Cat";
-    _brain = new Brain();
-    *this = src;
+Cat::Cat(Cat const & src) : Animal(src), _brain(new Brain(*src._brain)) {
 }
 
 Cat::~Cat() {
-    //delete(_brain);
+    delete(_brain);
     std::cout << "Cat destructor" << std::endl;
 }
 

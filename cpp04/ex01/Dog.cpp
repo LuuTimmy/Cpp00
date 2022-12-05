@@ -2,16 +2,15 @@
 
 Dog::Dog() {
     _type = "Dog";
+    _brain = new Brain();
     std::cout << "Dog Default constructor" << std::endl;
 }
 
-Dog::Dog(Dog const & src) {
-    _type = src._type;
-    *this = src;
+Dog::Dog(Dog const & src) : Animal(src), _brain(new Brain(*src._brain)) {
 }
 
 Dog::~Dog() {
-    //delete(_brain);
+    delete(_brain);
     std::cout << "Dog destructor" << std::endl;
 }
 

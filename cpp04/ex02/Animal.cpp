@@ -4,7 +4,7 @@ Animal::Animal() : _type("Animal") {
     std::cout << "Animal Default constructor" << std::endl;
 }
 
-Animal::Animal(Animal const & src) : _type("Animal") { 
+Animal::Animal(Animal const & src) : _type(src._type) { 
     *this = src;
 }
 

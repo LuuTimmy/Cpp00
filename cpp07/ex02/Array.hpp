@@ -7,7 +7,7 @@ template<typename T>
 class Array
 {
     public:
-        Array() :  _size(0), _tab(new T[0]) {};
+        Array() :  _size(0), _tab(0) {};
         Array(unsigned int size) : _size(size), _tab(new T[size]) {};
         Array(Array const & src) : _size(src._size), _tab(new T[src._size]) {
             for (unsigned int i = 0; i < _size; i++) {
@@ -31,8 +31,8 @@ class Array
             return (*this);
         };
 
-        T & operator[](int i) {
-            if (i < 0 || i >= _size)
+        T & operator[](unsigned int i) {
+            if (i >= _size)
                 throw InvalidIndexException();
             return (_tab[i]);
         }
