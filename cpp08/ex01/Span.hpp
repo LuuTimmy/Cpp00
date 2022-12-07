@@ -9,7 +9,7 @@ class   Span
 {
     public:
         Span(unsigned int maxSize);
-        ~Span();
+        virtual ~Span();
 
         void    addNumber(int nb);
         int     shortestSpan();
