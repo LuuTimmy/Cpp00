@@ -5,6 +5,8 @@
 #include <map>
 #include <cstdlib>
 #include <float.h>
+#include <limits>
+#include <cstdlib>
 
 size_t dateToInt(std::string date_str)
 {
@@ -75,13 +77,14 @@ int main(int argc, char **argv) {
         }
         
         float value;
-        std::stringstream(value_str) >> value;
-        if (value <= 0.0f) {
-            std::cout << "Error: not a positive number." << std::endl;
+        if (strtoll(value_str.c_str(), NULL, 10) > std::numeric_limits<int>::max()) {
+            std::cout << "Error: value too big." << std::endl;
             continue;
         }
-        if (value >= FLT_MAX) {
-            std::cout << "Error: too large a number." << std::endl;
+        else
+            std::stringstream(value_str) >> value;
+        if (value <= 0.0f) {
+            std::cout << "Error: not a positive number." << std::endl;
             continue;
         }
         float result = getExchangeRate(data, data_str) * value;
