@@ -1,13 +1,41 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <map>
-#include <cstdlib>
-#include <cstdlib>
-#include <vector>
-#include <list>
-#include <ctime>
+#include "PmergeMe.hpp"
+
+template <typename T>
+void merge(T& container, typename T::iterator left, typename T::iterator middle, typename T::iterator right)
+{
+    T temp;
+    typename T::iterator i = left, j = middle, k;
+
+    while (i != middle && j != right) {
+        if (*i < *j)
+            temp.push_back(*i++);
+        else
+            temp.push_back(*j++);
+    }
+
+    while (i != middle)
+        temp.push_back(*i++);
+
+    while (j != right)
+        temp.push_back(*j++);
+
+    for (k = temp.begin(); k != temp.end(); ++k)
+        *left++ = *k;
+}
+
+template <typename T>
+void merge_sort(T& container, typename T::iterator left, typename T::iterator right)
+{
+    if (std::distance(left, right) > 1) {
+        typename T::iterator middle = left;
+        std::advance(middle, std::distance(left, right) / 2);
+
+        merge_sort(container, left, middle);
+        merge_sort(container, middle, right);
+
+        merge(container, left, middle, right);
+    }
+}
 
 template<typename T>
 void displayContainer(const T& container) {
@@ -16,9 +44,6 @@ void displayContainer(const T& container) {
     }
     std::cout << std::endl;
 }
-
-//make me other mergesort
-
 
 int main(int argc, char **argv) {
     if (argc < 2) {
@@ -39,7 +64,21 @@ int main(int argc, char **argv) {
 
     std::list<int> nbList(sequence.begin(), sequence.end());
     clock_t beginTime1 = clock();
-    mergeInsertSort(nbList.begin(), nbList.end());
+    merge_sort(nbList, nbList.begin(), nbList.end());
     clock_t endTime1 = clock();
-    double elapsedTime1 = double(endTime1 - beginTime1) / CLOCKS_PER_SEC;
+    double elapsedTime1 = double(endTime1 - beginTime1) / CLOCKS_PER_SEC * 1000000;
+    
+    std::vector<int> nbVector(sequence.begin(), sequence.end());
+    clock_t beginTime2 = clock();
+    merge_sort(nbVector, nbVector.begin(), nbVector.end());
+    clock_t endTime2 = clock();
+    double elapsedTime2 = double(endTime2 - beginTime2) / CLOCKS_PER_SEC * 1000000;
+
+    std::cout << "After: ";
+    for (std::list<int>::const_iterator it = nbList.begin(); it != nbList.end(); ++it)
+        std::cout << *it << " ";
+    std::cout << std::endl;
+
+    std::cout << "Time to process a range of " << sequence.size() << " elements with std::list : " << elapsedTime1 << " us" << std::endl;
+    std::cout << "Time to process a range of " << sequence.size() << " elements with std::vector : " << elapsedTime2 << " us" << std::endl;
 }
