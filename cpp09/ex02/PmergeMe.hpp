@@ -13,6 +13,6 @@
 #include <ctime>
 
 template <typename T>
-void merge_sort(T& container, typename T::iterator left, typename T::iterator right);
+void merge_sort(T& container, typename T::iterator left, typename T::iterator right)
 
 #endif
